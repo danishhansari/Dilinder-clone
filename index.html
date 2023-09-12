@@ -7,10 +7,66 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/mhc3xqw.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+    <style>
+        * {
+            font-family: 'source-sans-pro';
+        }
+        textarea {
+            resize: none;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="content bg-red-500"></div>
+    <nav class="navbar bg-gray-800 text-white text-center p-3 font-semibold tracking-widest">
+        DILLINGER
+    </nav>
+    <div class="name px-4 flex w-full justify-between items-center border-b border-gray-100">
+        <div>
+            <p class="uppercase text-gray-500">document name</p>
+            <p>Untitled Document.md</p>
+        </div>
+        <div>
+            <p class="uppercase">reading time: <span class="time">3 min read</span> words: <span class="words">549
+                </span></p>
+            <p class="characters">characters <span class="char">3784</span></p>
+        </div>
+    </div>
+
+    <div class="flex w-full px-4">
+        <div class="markdown w-full">
+            <div class="flex text justify-between items-center">
+                <p class="uppercase">markdown</p>
+                <p>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </p>
+            </div>
+            <div class="text-input">
+                <textarea placeholder="Write a Markdwon" class="border w-full h-[87vh]"></textarea>
+            </div>
+        </div>
+        <div class="preview-el w-full">
+            <div class="flex text justify-between items-center">
+                <p class="uppercase">markdown</p>
+                <p>
+                    <i class="fa-solid fa-code"></i>
+                </p>
+            </div>
+            <pre>
+                <code class="preview language-python    ">
+                    
+                </code>
+            </pre>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 
