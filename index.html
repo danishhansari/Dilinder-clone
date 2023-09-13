@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dillinger Markdown Previewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://use.typekit.net/mhc3xqw.css">
@@ -15,19 +15,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <!-- and it's easy to individually load additional languages -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             font-family: 'source-sans-pro';
+            border-collapse: collapse;
         }
         textarea {
             resize: none;
+        }
+        .text-input {
+                    font-family: 'Ubuntu Mono', monospace;
         }
     </style>
 </head>
 
 <body>
 
-    <section class="bg-gray-700 text-white flex items-center justify-center h-screen w-full fixed overflow-hidden top-0 left-0 loading flex-col">
+    <section
+        class="bg-gray-700 text-white flex items-center justify-center h-screen w-full fixed overflow-hidden top-0 left-0 loading flex-col">
         <h1 class="uppercase text-8xl">dillinger</h1>
         <p class="text-center">Make something great today!</p>
     </section>
@@ -41,9 +50,11 @@
             <p>Untitled Document.md</p>
         </div>
         <div>
-            <p class="uppercase">reading time: <span class="time">3 min read</span> words: <span class="words">0
-                </span></p>
-            <p class="characters">characters <span class="char">0</span></p>
+            <p class="uppercase">reading time: <span class="time"></span></p>
+            <div class="flex w-full  justify-between items-center">
+                <p>Words: <span class="words">0</span></p>
+                <p class="characters">Characters: <span class="char">0</span></p>
+            </div>
         </div>
     </div>
 
@@ -56,11 +67,12 @@
                 </p>
             </div>
             <div class="text-input h-[87vh]">
-                <textarea placeholder="Write a Markdwon" class="border w-full h-full focus:outline-none border-2 border-gray-100 p-2 resize-none"></textarea>
+                <textarea placeholder="Write a Markdwon"
+                    class="border w-full h-full focus:outline-none border border-gray-100 p-2 resize-none"></textarea>
             </div>
         </div>
-        <div class="preview-el w-full overflow-x-auto px-2">
-            <div class="flex text justify-between items-center">
+        <div class="preview-el w-full overflow-x-auto px-2 border border-gray-100">
+            <div class="flex text justify-between items-center gap-2">
                 <p class="uppercase">preview</p>
                 <p>
                     <i class="fa-solid fa-code"></i>
