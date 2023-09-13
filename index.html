@@ -7,7 +7,6 @@
     <title>Dillinger Markdown Previewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/mhc3xqw.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,6 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+    <script src="  https://cdn.jsdelivr.net/npm/showdown@1.9.0/dist/showdown.min.js"></script>
     <style>
         * {
             font-family: 'source-sans-pro';
@@ -48,7 +48,7 @@
         <p>
             DILLINGER
         </p>
-        <button class="fa-solid fa-eye md:hidden eye-btn"></button>
+        <button class="fa-solid fa-eye md:hidden eye-btn text-xl"></button>
     </nav>
 
     <div class="name px-4 py-2 flex w-full justify-between items-center border-b-2 border-gray-100 ">
@@ -80,7 +80,7 @@
                 <textarea placeholder="Write a Markdwon"
                     class="border w-full h-full focus:outline-none border border-gray-100 p-2 resize-none"></textarea>
 
-                    <div class="mobile-preview hidden md:hidden overflow-x-auto break-all w-full"></div>
+                    <div class="mobile-preview hidden md:hidden overflow-x-auto break-all w-full "></div>
             </div>
         </div>
 
@@ -88,7 +88,7 @@
             <div class="flex text justify-between items-center gap-2 p-2">
                 <p class="uppercase text-md text-gray-400  tracking-widest">preview</p>
                 <button
-                    class="fa-solid fa-code cursor-pointer bg-gray-200 p-2 text-xl rounded-md hover:bg-gray-300 transition-all duration-100">
+                    class="fa-solid fa-code cursor-pointer bg-gray-200 p-2 text-xl rounded-md hover:bg-gray-300 transition-all duration-100 preview-html">
                 </button>
             </div>
             <div class="preview break-all w-full">
