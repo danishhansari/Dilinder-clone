@@ -29,7 +29,7 @@
     <nav class="navbar bg-gray-800 text-white text-center p-3 font-semibold tracking-widest">
         DILLINGER
     </nav>
-    <div class="name px-4 flex w-full justify-between items-center border-b border-gray-100">
+    <div class="name px-4 flex w-full justify-between items-center border-b-2 border-gray-100">
         <div>
             <p class="uppercase text-gray-500">document name</p>
             <p>Untitled Document.md</p>
@@ -43,17 +43,17 @@
 
     <div class="flex w-full px-4">
         <div class="markdown w-full">
-            <div class="flex text justify-between items-center">
+            <div class="flex text justify-between items-center border-r-2">
                 <p class="uppercase">markdown</p>
                 <p>
                     <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                 </p>
             </div>
-            <div class="text-input">
-                <textarea placeholder="Write a Markdwon" class="border w-full h-[87vh]"></textarea>
+            <div class="text-input h-[87vh]">
+                <textarea placeholder="Write a Markdwon" class="border w-full h-full focus:outline-none border-2 border-gray-100 p-2 resize-none"></textarea>
             </div>
         </div>
-        <div class="preview-el w-full">
+        <div class="preview-el w-full overflow-x-auto">
             <div class="flex text justify-between items-center">
                 <p class="uppercase">markdown</p>
                 <p>
@@ -61,7 +61,7 @@
                 </p>
             </div>
             <pre>
-                <code class="preview language-python    ">
+                <code class="preview language-java break-all w-full">
                     
                 </code>
             </pre>
