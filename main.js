@@ -7,7 +7,9 @@ const readingTime = document.querySelector('.time');
 const previewBtnOpen = document.querySelector('.preview-open')
 const previewBtnClose = document.querySelector('.preview-close')
 const bigPreviewContainer = document.querySelector('.preview-container')
-const previewText = document.querySelector('.big-preview')
+const previewText = document.querySelector('.big-preview');
+const eyeBtn = document.querySelector('.eye-btn') // ONly in mobile to show the preview div
+
 
 window.addEventListener('load', () => {
   setTimeout(() => {
@@ -44,3 +46,12 @@ previewBtnClose.addEventListener('click', togglePreviewContainer)
 
 textArea.addEventListener("input",(e) => displayPreview(textArea.value));
 previewText.addEventListener("input",(e) => displayPreviewContainer(previewText.value));
+
+
+eyeBtn.addEventListener('click', () => {
+    let text = document.querySelector('.text-input textarea')
+    let mobilePreview = document.querySelector('.mobile-preview')
+    text.classList.toggle('hidden')
+    mobilePreview.classList.toggle('hidden')
+    mobilePreview.innerHTML = marked.parse(text.value);
+})
