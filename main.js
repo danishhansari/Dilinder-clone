@@ -1,3 +1,4 @@
+'use strict'
 const loading = document.querySelector(".loading"); // Loading Window before all Excution
 const textArea = document.querySelector(".text-input textarea");
 const preview = document.querySelector(".preview");
