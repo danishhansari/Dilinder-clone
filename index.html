@@ -24,11 +24,14 @@
             font-family: 'source-sans-pro';
             border-collapse: collapse;
         }
+
         textarea {
             resize: none;
         }
-        .text-input {
-                    font-family: 'Ubuntu Mono', monospace;
+
+        .text-input,
+        .big-preview {
+            font-family: 'Ubuntu Mono', monospace;
         }
     </style>
 </head>
@@ -36,34 +39,38 @@
 <body>
 
     <section
-        class="bg-gray-700 text-white flex items-center justify-center h-screen w-full fixed overflow-hidden top-0 left-0 loading flex-col">
+        class="bg-gray-700 text-white flex items-center justify-center h-[100vh] w-full fixed top-0 left-0 loading flex-col overflow-hidden z-20">
         <h1 class="uppercase text-8xl">dillinger</h1>
         <p class="text-center">Make something great today!</p>
     </section>
 
-    <nav class="navbar bg-gray-800 text-white text-center p-3 font-semibold tracking-widest">
+    <nav class="navbar bg-gray-700 text-white text-center p-3 font-semibold tracking-widest text-xl">
         DILLINGER
     </nav>
-    <div class="name px-4 flex w-full justify-between items-center border-b-2 border-gray-100">
-        <div>
+
+    <div class="name px-4 py-2 flex w-full justify-between items-center border-b-2 border-gray-100 ">
+        <div class="text-xl">
             <p class="uppercase text-gray-500">document name</p>
             <p>Untitled Document.md</p>
         </div>
-        <div>
-            <p class="uppercase">reading time: <span class="time"></span></p>
-            <div class="flex w-full  justify-between items-center">
-                <p>Words: <span class="words">0</span></p>
-                <p class="characters">Characters: <span class="char">0</span></p>
+        <div class="read">
+            <p class="uppercase text-gray-500">reading time: <span class="time text-black"></span></p>
+            <div class="flex w-full  justify-between items-center text-xl text-gray-500 gap-4">
+                <p>Words: <span class="words text-black">0</span></p>
+                <p class="characters">Characters: <span class="char text-black">0</span></p>
             </div>
         </div>
     </div>
 
     <div class="flex w-full px-4">
+
         <div class="markdown w-full">
-            <div class="flex text justify-between items-center border-r-2">
-                <p class="uppercase">markdown</p>
+            <div class="flex text justify-between items-center border-r-2 p-2">
+                <p class="uppercase text-md text-gray-400  tracking-widest">markdown</p>
                 <p>
-                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                    <button
+                        class="fa-solid fa-up-right-and-down-left-from-center cursor-pointer bg-gray-200 p-2 text-xl rounded-md hover:bg-gray-300 transition-all duration-100 preview-open">
+                    </button>
                 </p>
             </div>
             <div class="text-input h-[87vh]">
@@ -71,20 +78,36 @@
                     class="border w-full h-full focus:outline-none border border-gray-100 p-2 resize-none"></textarea>
             </div>
         </div>
-        <div class="preview-el w-full overflow-x-auto px-2 border border-gray-100">
-            <div class="flex text justify-between items-center gap-2">
-                <p class="uppercase">preview</p>
-                <p>
-                    <i class="fa-solid fa-code"></i>
-                </p>
+
+        <div class="preview-el w-full overflow-x-auto px-2 border border-gray-100 md:block hidden">
+            <div class="flex text justify-between items-center gap-2 p-2">
+                <p class="uppercase text-md text-gray-400  tracking-widest">preview</p>
+                <button
+                    class="fa-solid fa-code cursor-pointer bg-gray-200 p-2 text-xl rounded-md hover:bg-gray-300 transition-all duration-100">
+                </button>
             </div>
-            <pre>
-                <code class="preview language-java break-all w-full">
-                    
-                </code>
+            <div class="preview break-all w-full">
+
+            </div>
             </pre>
         </div>
     </div>
+
+    <section
+        class="w-full h-screen fixed top-0 left-0 z-10 bg-white flex  justify-center items-center hidden preview-container">
+        <button
+            class="fa-solid fa-down-left-and-up-right-to-center cursor-pointer bg-gray-200 p-2 text-xl rounded-md hover:bg-gray-300 transition-all duration-100 absolute top-8 right-8 preview-close">
+        </button>
+
+        <textarea class="big-preview w-full md:w-[40%] h-[95%] md:h-[80%] p-4 border-none outline-none my-8">
+
+    </textarea>
+
+    </section>
+
+
+
+
     <script src="main.js"></script>
 </body>
 

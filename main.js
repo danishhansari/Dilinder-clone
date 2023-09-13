@@ -4,7 +4,11 @@ const words = document.querySelector(".words");
 const character = document.querySelector(".char");
 const loading = document.querySelector(".loading");
 const readingTime = document.querySelector('.time');
-// setTimeout(loading.classList.add("hidden"), 5000);
+const previewBtnOpen = document.querySelector('.preview-open')
+const previewBtnClose = document.querySelector('.preview-close')
+const bigPreviewContainer = document.querySelector('.preview-container')
+const previewText = document.querySelector('.big-preview')
+
 window.addEventListener('load', () => {
   setTimeout(() => {
     loading.classList.add('hidden')
@@ -17,11 +21,26 @@ function readTime (textArea) {
   let length = wordsVal.length / 400;
   readingTime.textContent = `${Math.max(1, length.toFixed())} Min Read`
   words.textContent = wordsVal.length;
-  character.textContent = characterVal.length - 1;
+  character.textContent = characterVal.length;
 }
-function displayPreview() {
-  preview.innerHTML = marked.parse(textArea.value);
-  readTime(textArea.value)
+function displayPreview(text) {
+  preview.innerHTML = marked.parse(text);
+  readTime(text)
 }
 
-textArea.addEventListener("input", displayPreview);
+function togglePreviewContainer () {
+    bigPreviewContainer.classList.toggle('hidden')
+    previewText.value = textArea.value
+    // displayPreview(previewText.value)
+    console.log(previewText.value);
+} 
+function displayPreviewContainer (text) {
+    preview.innerHTML = marked.parse(text)
+    textArea.value = text
+    readTime(text)
+}
+previewBtnOpen.addEventListener('click', togglePreviewContainer)
+previewBtnClose.addEventListener('click', togglePreviewContainer)
+
+textArea.addEventListener("input",(e) => displayPreview(textArea.value));
+previewText.addEventListener("input",(e) => displayPreviewContainer(previewText.value));
