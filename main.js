@@ -4,7 +4,12 @@ const words = document.querySelector(".words");
 const character = document.querySelector(".char");
 const loading = document.querySelector(".loading");
 
-setTimeout(loading.classList.add("hidden"), 5000);
+// setTimeout(loading.classList.add("hidden"), 5000);
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    loading.classList.add('hidden')
+  },1000)
+})
 
 function displayPreview() {
   preview.innerHTML = marked.parse(textArea.value);
